@@ -14,4 +14,4 @@ Create files with certificates (example.com) in root directory
 Execute
 `npm server start`
 
-Open https://example.com:8443/create/<token>
+Open https://example.com:8443/create/app-token
