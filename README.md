@@ -1,5 +1,5 @@
-# VideoCall
-Based on https://github.com/Kamwebdev/VideoCall-Improved
+# VideoCall-Improved
+Based on https://github.com/Abhishek07Kalra/VideoCall
 
 ## What changed?
 - https support added
