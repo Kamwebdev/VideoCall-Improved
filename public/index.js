@@ -38,20 +38,22 @@ peer.on('error' , (err)=>{
   alert(err.type);
 });
 socket.on('userJoined' , id=>{
-  console.log("new user joined")
-  const call  = peer.call(id , myVideoStream);
-  const vid = document.createElement('video');
-  call.on('error' , (err)=>{
-    alert(err);
-  })
-  call.on('stream' , userStream=>{
-    addVideo(vid , userStream);
-  })
-  call.on('close' , ()=>{
-    vid.remove();
-    console.log("user disconect")
-  })
-  peerConnections[id] = call;
+  setTimeout(function () {
+    console.log("new user joined")
+    const call  = peer.call(id , myVideoStream);
+    const vid = document.createElement('video');
+    call.on('error' , (err)=>{
+      alert(err);
+    })
+    call.on('stream' , userStream=>{
+      addVideo(vid , userStream);
+    })
+    call.on('close' , ()=>{
+      vid.remove();
+      console.log("user disconect")
+    })
+    peerConnections[id] = call;
+  }, 2000);
 })
 socket.on('userDisconnect' , id=>{
   if(peerConnections[id]){
